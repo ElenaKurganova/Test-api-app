@@ -1,0 +1,45 @@
+<app-menu></app-menu>
+
+<div style="text-align:center">
+  <h2>
+    Jobs dashboard
+  </h2>
+</div>
+
+<div class="example-container mat-elevation-z8">
+  <div class="example-loading-shade"
+       *ngIf="isLoadingData">
+    <mat-spinner *ngIf="isLoadingData"></mat-spinner>
+  </div>
+
+  <div class="button-row">
+    <a mat-flat-button color="primary" [routerLink]="['/home']"><mat-icon>keyboard_backspace</mat-icon></a>
+  </div>
+
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title><h3>{{job.title}}</h3></mat-card-title>
+      <mat-card-subtitle><p>{{job.description}}</p></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <dl>
+        <dt>Job No.:</dt>
+        <dd>{{job.referenceNo}}</dd>
+        <dt>Priority:</dt>
+        <dd>{{job.priority}}</dd>
+        <dt>Start:</dt>
+        <dd>{{job.startTime | date}}</dd>
+        <dt>End:</dt>
+        <dd>{{job.endTime | date}}</dd>
+        <dt>Job duration:</dt>
+        <dd>{{job.duration}} min</dd>
+        <dt>Customer Name:</dt>
+        <dd>{{job.customerName}}</dd>
+      </dl>
+
+
+
+    </mat-card-content>
+
+  </mat-card>
+</div>
